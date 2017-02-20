@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rather</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+     <% flash.each do |key, value| %>
+       <div class="alert alert-<%= key %>">
+         <%= image_tag 'x.png', class: 'x' %>
+         <h4 class="message"><%= value %></h4>
+       </div>
+     <% end %>
+   </div>
+
+    <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+
+    <%= yield %>
+  </body>
+</html>
