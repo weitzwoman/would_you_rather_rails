@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
     if @answerA.save
       @answerB = @question.answers.new(content: params[:"B"], image: params[:"photoB"])
       if @answerB.save
-
         flash[:notice] = "Question Created Successfullly"
         redirect_to questions_path
       else
