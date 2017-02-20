@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-
+  protect_from_forgery with: :null_session
 
   def index
     @questions = Question.all
@@ -14,7 +14,10 @@ class QuestionsController < ApplicationController
       @answerB = @question.answers.new(content: params[:"B"], image: params[:PhotoB])
       if @answerB.save
         flash[:notice] = "Question Created Successfullly"
-        redirect_to questions_path
+        respond_to do |format|
+          format.html {redirect_to questions_path}
+          format.js
+        end
       else
         flash[:alert] = "TRY AGAIN"
         redirect_to :back

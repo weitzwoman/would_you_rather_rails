@@ -17,7 +17,36 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
+
 $sand: #faf0e6;
+$robinsegg: rgba(31, 206, 203, 1);
+
+.btn {
+  color: black;
+  border: 2px solid black;
+  border-radius: 0;
+  background-color: transparent;
+  font-weight: bold;
+  transition: 1s;
+  &:hover {
+    background-color: black;
+    color: $robinsegg;
+  }
+
+}
+input.form-control {
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid black;
+  box-shadow: none;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
 
 body {
   background-color: $sand;
@@ -25,13 +54,46 @@ body {
 
 #question-list {
   list-style-type: none;
+  padding: 0;
+}
+
+.answer-container {
+  max-width: 300px;
+  img {
+    width: 100%;
+  }
+}
+
+.question-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px;
 }
 
 .question-container {
   border: 2px solid black;
 }
 
-
+#question_form {
+  ::-webkit-input-placeholder {
+    color: black;
+  }
+  padding: 25px;
+  position: absolute;
+  top: 0;
+  left: 50px;
+  z-index: 500;
+  height: auto;
+  max-width: 550px;
+  background-color: rgba(31, 206, 203, 1);
+  animation-name: slideDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  .x-form {
+    height: 25px;
+    float: right;
+  }
+}
 
 .alert {
   background-color: rgba(40,40,40,0.5);
@@ -59,6 +121,14 @@ div.alert.alert-alert {
   h4 {
     color: maroon;
   }
+}
+@keyframes slideDown {
+  0% {
+   transform: translateY(-100%)
+ }
+ 100% {
+   transform: translateY(0)
+ }
 }
 
 @keyframes slider {

@@ -9,7 +9,9 @@
   </head>
 
   <body>
-
+    <div id="drop-down-question">
+      
+    </div>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
@@ -24,7 +26,7 @@
         <div class="row">
           <div class="col-sm-6">
             <ul>
-              <li><%= link_to "Add New Question",  new_question_path %></li>
+              <li><%= link_to "Add New Question",  new_question_path, remote: true %></li>
             </ul>
           </div>
           <div class="col-sm-6">

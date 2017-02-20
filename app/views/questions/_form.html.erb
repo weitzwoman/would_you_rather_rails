@@ -1,18 +1,25 @@
-<%= form_tag questions_path, multipart: true %>
-<div class="form-group">
-  <%= label_tag "Enter Answer A" %>
-  <%= text_field_tag "A" %>
+<div id="question_form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-5">
+        <%= form_tag questions_path, remote: true, multipart: true %>
+        <div class="form-group">
+          <%= text_field_tag "A", "", placeholder: "Enter Answer A", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "Add Image A" %><br>
+          <%= file_field_tag "PhotoA", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= text_field_tag "B", "", placeholder: "Enter Answer B", class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= label_tag "Add Image B" %><br>
+          <%= file_field_tag "PhotoB", class: "form-control" %>
+        </div>
+        <%= submit_tag "Create Question", class: "btn" %>
+        <%= image_tag 'x.png', class: 'x-form' %>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="form-group">
-  <%= label_tag "Add Image A" %>
-  <%= file_field_tag "PhotoA" %>
-</div>
-<div class="form-group">
-  <%= label_tag "Enter Answer B" %>
-  <%= text_field_tag "B" %>
-</div>
-<div class="form-group">
-  <%= label_tag "Add Image B" %>
-  <%= file_field_tag "PhotoB" %>
-</div>
-<%= submit_tag "Create Question" %>
