@@ -9,24 +9,28 @@
       <div class="row question-row">
         <div class="col-sm-5 answer-container">
           <p><%= q.answers.first.content %></p>
-          <%= image_tag q.answers.first.image(:medium) %>
 
-          <%= link_to like_question_answer_path(q, q.answers.first), method: :put do %>
-            Upvote
-            <%= q.answers.first.get_upvotes.size %>
-          <% end %>
+          <%= link_to image_tag(q.answers.first.image(:medium)), like_question_answer_path(q, q.answers.first), method: :put %>
         </div>
+
+
         <div class="col-sm-2">
           <h3 class="question-show text-center">OR</h3>
           <h2 class="results text-center">RESULTS</h2>
+          <div class="col-sm-6">
+            <%= q.answers.first.get_upvotes.size %>
+          </div>
+          <div class="col-sm-6">
+            <%= q.answers.last.get_upvotes.size %>
+
+          </div>
+
         </div>
+
+
         <div class="col-sm-5 answer-container">
           <p><%= q.answers.last.content %></p>
-          <%= image_tag q.answers.last.image(:medium) %>
-          <%= link_to like_question_answer_path(q, q.answers.last), method: :put do %>
-            Upvote
-            <%= q.answers.last.get_upvotes.size %>
-          <% end %>
+          <%= link_to image_tag(q.answers.last.image(:medium)), like_question_answer_path(q, q.answers.last), method: :put %>
         </div>
       </div>
 
