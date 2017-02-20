@@ -1,0 +1,14 @@
+<h1>QUESTIONS</h1>
+
+<% if @questions.any? %>
+  <ul id="question-list">
+    <% @questions.each do |q| %>
+    <div class="question-container">
+      <% q.answers.each do |a| %>
+      <%= a.image %>
+      <li> <%= a.content %></li>
+      <% end %>
+    </div>
+    <% end %>
+  </ul>
+<% end %>

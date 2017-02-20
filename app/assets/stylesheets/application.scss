@@ -19,6 +19,20 @@
 
 $sand: #faf0e6;
 
+body {
+  background-color: $sand;
+}
+
+#question-list {
+  list-style-type: none;
+}
+
+.question-container {
+  border: 2px solid black;
+}
+
+
+
 .alert {
   background-color: rgba(40,40,40,0.5);
   color: $sand;
