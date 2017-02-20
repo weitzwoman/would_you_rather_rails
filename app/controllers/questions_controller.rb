@@ -9,9 +9,9 @@ class QuestionsController < ApplicationController
 
   def create
     @question = Question.create()
-    @answerA = @question.answers.new(content: params[:"A"], image: params[:"photoA"])
+    @answerA = @question.answers.new(content: params[:"A"], image: params[:PhotoA])
     if @answerA.save
-      @answerB = @question.answers.new(content: params[:"B"], image: params[:"photoB"])
+      @answerB = @question.answers.new(content: params[:"B"], image: params[:PhotoB])
       if @answerB.save
         flash[:notice] = "Question Created Successfullly"
         redirect_to questions_path

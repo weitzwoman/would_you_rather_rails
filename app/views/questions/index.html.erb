@@ -5,7 +5,7 @@
     <% @questions.each do |q| %>
     <div class="question-container">
       <% q.answers.each do |a| %>
-      <%= a.image %>
+      <%= image_tag a.image(:medium) %>
       <li> <%= a.content %></li>
       <% end %>
     </div>
