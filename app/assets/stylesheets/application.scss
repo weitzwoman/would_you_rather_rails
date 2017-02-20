@@ -13,3 +13,45 @@
  *= require_tree .
  *= require_self
  */
+
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+$sand: #faf0e6;
+
+.alert {
+  background-color: rgba(40,40,40,0.5);
+  color: $sand;
+  position: absolute;
+  top: 100px;
+  right: 50px;
+  height: auto;
+  width: 300px;
+  padding: 25px;
+  animation-name: slider;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  .x {
+    height: 15px;
+    float: right;
+  }
+}
+div.alert.alert-flash {
+  h4 {
+    color: $sand
+  }
+}
+div.alert.alert-alert {
+  h4 {
+    color: maroon;
+  }
+}
+
+@keyframes slider {
+  0% {
+   transform: translateX(+100%)
+ }
+ 100% {
+   transform: translateX(0)
+ }
+}
