@@ -4,6 +4,10 @@ Rails.application.routes.draw do
   root to: 'home#index'
 
   resources :questions do
-    resources :answers
+    resources :answers do
+      member do
+        put "like", to: "answers#upvote"
+      end
+    end
   end
 end
