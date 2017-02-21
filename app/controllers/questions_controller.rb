@@ -1,5 +1,7 @@
 class QuestionsController < ApplicationController
   protect_from_forgery with: :null_session
+  before_action :authenticate_user!, except: [:index, :show]
+
 
   def index
     @questions = Question.all
@@ -29,7 +31,7 @@ class QuestionsController < ApplicationController
   end
 
   def close_form
-    
+
   end
 
 

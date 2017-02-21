@@ -16,15 +16,18 @@
 
         <div class="col-sm-2">
           <h3 class="question-show text-center">OR</h3>
-          <h2 class="results text-center">RESULTS</h2>
-          <div class="col-sm-6">
-            <%= q.answers.first.get_upvotes.size %>
-          </div>
-          <div class="col-sm-6">
-            <%= q.answers.last.get_upvotes.size %>
 
-          </div>
-
+          <% if has_voted(q) %>
+            <div class="results-div">
+              <h2 class="results text-center">RESULTS</h2>
+              <div class="col-sm-6">
+                <%= q.answers.first.get_upvotes.size %>
+              </div>
+              <div class="col-sm-6">
+                <%= q.answers.last.get_upvotes.size %>
+              </div>
+            </div>
+          <% end %>
         </div>
 
 
