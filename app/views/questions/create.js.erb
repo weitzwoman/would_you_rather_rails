@@ -1,6 +1,6 @@
 $("#question_form").slideUp();
 if ("<% @question.answers === nil %>") {
-  alert("YOU FUCKED UP");
+  alert("YOU MADE A MISTAKE. SAD.");
 } else {
   $("#question-list").append("<%= j render(@question) %>");
 }

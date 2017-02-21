@@ -2,10 +2,10 @@ class QuestionsController < ApplicationController
   protect_from_forgery with: :null_session
   before_action :user_signed_in?, except: [:index, :show]
 
-
   def index
     @questions = Question.all
   end
+
   def new
   end
 
@@ -22,19 +22,17 @@ class QuestionsController < ApplicationController
         end
       else
         @question.destroy
-        flash[:alert] = "TRY AGAIN"
+        flash[:alert] = "You made a mistake. Sad"
         redirect_to :back
       end
     else
       @question.destroy
-      flash[:alert] = "TRY AGAIN"
+      flash[:alert] = "You made a mistake. Sad"
       redirect_to :back
     end
   end
 
   def close_form
-
   end
-
 
 end

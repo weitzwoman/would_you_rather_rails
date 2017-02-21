@@ -3,6 +3,7 @@ class AnswersController < ApplicationController
 
   def show
   end
+  
   def upvote
     canvote = true
     @answer = Answer.find(params[:id])
