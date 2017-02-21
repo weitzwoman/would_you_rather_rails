@@ -16,13 +16,22 @@
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
-
+@import 'toastr';
 
 $sand: #faf0e6;
 $robinsegg: rgba(31, 206, 203, 1);
 $darkegg: #0c9290;
 $orange: #d97312;
 $pink: #d91279;
+
+#toast-container > .toast-info {
+  position: absolute;
+  color: $darkegg;
+  background-image: none;
+  top: 100px;
+  background-color: $sand;
+  opacity: 1;
+}
 
 a {
   color: $robinsegg;
@@ -114,6 +123,7 @@ body {
 
 .question-container {
   border: 2px solid black;
+  margin: 25px 0;
 }
 
 #question_form {
@@ -210,4 +220,8 @@ div.alert.alert-alert {
 
 .results-div {
   display: none;
+}
+
+.questions-container {
+  margin-top: 25px;
 }

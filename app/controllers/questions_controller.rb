@@ -21,10 +21,12 @@ class QuestionsController < ApplicationController
           format.js
         end
       else
+        @question.destroy
         flash[:alert] = "TRY AGAIN"
         redirect_to :back
       end
     else
+      @question.destroy
       flash[:alert] = "TRY AGAIN"
       redirect_to :back
     end

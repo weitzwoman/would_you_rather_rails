@@ -1,2 +1,6 @@
 $("#question_form").slideUp();
-$("#question-list").append("<%= j render(@question) %>");
+if ("<% @question.answers === nil %>") {
+  alert("YOU FUCKED UP");
+} else {
+  $("#question-list").append("<%= j render(@question) %>");
+}
