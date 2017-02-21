@@ -132,8 +132,10 @@ body {
   animation-duration: 1s;
   animation-timing-function: ease-out;
   .x-form {
-    height: 25px;
-    float: right;
+    img {
+      height: 25px;
+      float: right;
+    }
   }
 }
 

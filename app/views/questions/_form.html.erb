@@ -18,7 +18,7 @@
           <%= file_field_tag "PhotoB", class: "form-control" %>
         </div>
         <%= submit_tag "Create Question", class: "btn" %>
-        <%= image_tag 'x.png', class: 'x-form' %>
+        <%= link_to image_tag('x.png'), close_path, remote: true, class: 'x-form' %>
       </div>
     </div>
   </div>

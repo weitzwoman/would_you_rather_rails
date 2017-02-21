@@ -28,5 +28,9 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def close_form
+    
+  end
+
 
 end
