@@ -12,7 +12,10 @@ class AnswersController < ApplicationController
         if current_user.id == vote.voter_id
           canvote = false
           flash[:notice] = "YOU CANT VOTE TWICE! FAKE NEWS! VOTER FRAUD!"
-          redirect_to questions_path
+          respond_to do |format|
+            format.html {redirect_to questions_path}
+            format.js
+          end
           return
         else
           canvote = true
@@ -22,7 +25,10 @@ class AnswersController < ApplicationController
     if canvote == true
       @answer.upvote_by current_user
       flash[:notice] = "Thanks for voting #{current_user.name}"
-      redirect_to questions_path
+      respond_to do |format|
+        format.html {redirect_to questions_path}
+        format.js
+      end
     end
   end
 

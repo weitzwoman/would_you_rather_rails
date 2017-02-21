@@ -7,18 +7,18 @@
     <div class="question-container">
       <h1 class="text-center"> WOULD YOU RATHER....</h1>
       <div class="row question-row">
-        <div class="col-sm-5 answer-container">
+        <div id="answer<%=q.answers.first.id%>" class="col-sm-5 answer-container">
           <p><%= q.answers.first.content %></p>
 
-          <%= link_to image_tag(q.answers.first.image(:medium)), like_question_answer_path(q, q.answers.first), method: :put %>
+          <%= link_to image_tag(q.answers.first.image(:medium)), like_question_answer_path(q, q.answers.first), remote: true, method: :put %>
         </div>
 
 
         <div class="col-sm-2">
           <h3 class="question-show text-center">OR</h3>
 
-          <% if has_voted(q) %>
-            <div class="results-div">
+
+            <div class="results-div" id="results-q<%= q.id %>">
               <h2 class="results text-center">RESULTS</h2>
               <div class="col-sm-6">
                 <%= q.answers.first.get_upvotes.size %>
@@ -27,13 +27,13 @@
                 <%= q.answers.last.get_upvotes.size %>
               </div>
             </div>
-          <% end %>
+
         </div>
 
 
-        <div class="col-sm-5 answer-container">
+        <div id="answer<%=q.answers.last.id%>" class="col-sm-5 answer-container">
           <p><%= q.answers.last.content %></p>
-          <%= link_to image_tag(q.answers.last.image(:medium)), like_question_answer_path(q, q.answers.last), method: :put %>
+          <%= link_to image_tag(q.answers.last.image(:medium)), like_question_answer_path(q, q.answers.last), remote: true, method: :put %>
         </div>
       </div>
 
