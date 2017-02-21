@@ -4,7 +4,7 @@ class AnswersController < ApplicationController
   def show
   end
   def upvote
-    canvote = false
+    canvote = true
     @answer = Answer.find(params[:id])
     @question = @answer.question
     @question.answers.each do |a|
@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
         if current_user.id == vote.voter_id
           canvote = false
           flash[:notice] = "YOU CANT VOTE TWICE! FAKE NEWS! VOTER FRAUD!"
-          redirect_to :back
+          redirect_to questions_path
           return
         else
           canvote = true
@@ -22,7 +22,7 @@ class AnswersController < ApplicationController
     if canvote == true
       @answer.upvote_by current_user
       flash[:notice] = "Thanks for voting #{current_user.name}"
-      redirect_to :back
+      redirect_to questions_path
     end
   end
 
