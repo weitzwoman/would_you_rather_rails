@@ -20,6 +20,22 @@
 
 $sand: #faf0e6;
 $robinsegg: rgba(31, 206, 203, 1);
+$darkegg: #0c9290;
+$orange: #d97312;
+$pink: #d91279;
+
+a {
+  color: $robinsegg;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  &:hover {
+    color: $darkegg;
+    text-decoration: none;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $darkegg;
+  }
+}
 
 .btn {
   color: black;
@@ -50,6 +66,32 @@ input.form-control {
 
 body {
   background-color: $sand;
+}
+
+.nav-wrap {
+  background-color: $pink;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-bottom: 2px solid black;
+  z-index: 600;
+}
+
+.main-nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  li {
+    display: inline-block;
+  }
+}
+#main-nav {
+  float: right;
+  li {
+    padding-right: 25px;
+  }
 }
 
 #question-list {
@@ -97,7 +139,6 @@ body {
 
 .alert {
   background-color: rgba(40,40,40,0.5);
-  color: $sand;
   position: absolute;
   top: 100px;
   right: 50px;
@@ -112,14 +153,14 @@ body {
     float: right;
   }
 }
-div.alert.alert-flash {
+div.alert.alert-notice {
   h4 {
-    color: $sand
+    color: $pink;
   }
 }
 div.alert.alert-alert {
   h4 {
-    color: maroon;
+    color: darken($orange, 15%);
   }
 }
 @keyframes slideDown {
@@ -138,4 +179,29 @@ div.alert.alert-alert {
  100% {
    transform: translateX(0)
  }
+}
+
+
+.main-content {
+  margin-top: 75px;
+}
+
+.actions {
+  .btn {
+    margin: 25px 0;
+  }
+}
+
+.barn {
+  margin-right: 25px;
+  &:hover {
+    border-bottom: 0;
+  }
+  img {
+    height: 35px;
+    &:hover {
+      opacity: .5;
+    }
+
+  }
 }

@@ -9,9 +9,6 @@
   </head>
 
   <body>
-    <div id="drop-down-question">
-      
-    </div>
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
@@ -21,32 +18,35 @@
       <% end %>
     </div>
 
-    <div class="container-fluid">
+    <div class="container-fluid nav-wrap">
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <ul>
+            <ul class="main-nav">
+              <li><%= link_to image_tag('barn.png'), root_path, class: 'barn' %></li>
               <li><%= link_to "Add New Question",  new_question_path, remote: true %></li>
             </ul>
           </div>
           <div class="col-sm-6">
-            <ul id="main-nav">
+            <ul id="main-nav" class="main-nav">
               <% if current_user %>
-                <li><%= current_user.name %></li>
+                <li><%= link_to current_user.name, edit_user_registration_path %></li>
                 <li><%= link_to "Log Out", destroy_user_session_path, method: 'delete' %></li>
               <% else %>
                 <li><%= link_to "Log In", new_user_session_path %></li>
+                <li><%= link_to "Sign Up", new_user_registration_path %></li>
               <% end %>
             </ul>
+          </div>
+          <div id="drop-down-question">
+
           </div>
         </div>
       </div>
     </div>
 
-
-
-
-
-    <%= yield %>
+    <div class="container main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>
