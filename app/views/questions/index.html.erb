@@ -25,6 +25,8 @@
               <div class="col-sm-6 text-center">
                 <%= q.answers.last.get_upvotes.size %>
               </div>
+              <%= pie_chart q.answers.first.get_upvotes.group(:votable_type).count %>
+
             </div>
 
         </div>
